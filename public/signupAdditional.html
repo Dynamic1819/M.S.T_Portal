@@ -1,0 +1,87 @@
+<html lang="en" class="scroll-smooth" data-theme="business">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Informations</title>
+    <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-white">
+        <form action="" class="space-y-2 h-screen">
+            <div class="form-control mx-auto max-w-md">
+                <label class="label">
+                <span class="label-text text-black">Student ID</span>
+                </label>
+                <input required type="text" placeholder="Student ID" class="input border-2 border-black rounded-md w-full h-9 bg-white text-black">
+            </div>
+            <div class="grid grid-cols-2 form-control mx-auto max-w-md">
+                <div class="col-span-1 mr-2">
+                    <label class="label">
+                    <span class="label-text text-black">Student's Phone Number</span>
+                    </label>
+                    <input required type="text" placeholder="Phone Number" class="input border-2 border-black rounded-md w-full h-9 bg-white text-black">
+                </div>
+                <div class="col-span-1">
+                    <label class="label">
+                    <span class="label-text text-black">Parent's Phone Number</span>
+                    </label>
+                    <input required type="text" placeholder="Phone Number" class="input border-2 border-black rounded-md w-full h-9 bg-white text-black">
+                </div>
+            </div>
+            <div class="form-control mx-auto max-w-md">
+                <label class="label">
+                <span class="label-text text-black">Email Address</span>
+                </label>
+                <input required type="email" placeholder="Email" class="input border-2 border-black rounded-md w-full h-10 bg-white text-black">
+            </div>
+            <div class="form-control mx-auto max-w-md">
+                <label class="label">
+                <span class="label-text text-black">Default Password</span>
+                </label>
+                <input required type="password" placeholder="Password" class="passIn input border-2 border-black rounded-md h-9 bg-white text-black">
+            </div>
+            <div class="form-control mx-auto max-w-md">
+                <label class="label">
+                <span class="label-text text-black">New Password</span>
+                </label>
+                <input required type="password" placeholder="New Password" class="passIn input border-2 border-black rounded-md w-full h-9 bg-white text-black">
+            </div>
+            <div class=" form-control mx-auto max-w-md">
+                <label class="label">
+                <span class="label-text text-black">Confirm Password</span>
+                </label>
+                <input required type="password" placeholder="Confirm Password" class="passIn input border-2 border-black rounded-md w-full h-9 bg-white text-black">
+            </div>
+            <div class="form-control mx-auto max-w-md">
+                <label class="label cursor-pointer">
+                  <span class="label-text text-black">Show Password</span> 
+                  <input type="checkbox" onclick="PassVisibility()" id="showPassword" class="toggle toggle-success rounded-lg">
+                </label>
+            </div>
+            <div class="form-control mx-auto max-w-md">
+                <div class="flex gap-x-2">
+                    <button type="reset" class="btn btn-sm border-b-2 border-b-secondary transition ease-out hover:rounded-md hover:btn-error btn-ghost text-black w-1/2">Cancel</button>
+                    <button type="submit" class="btn btn-sm border-b-2 border-b-primary transition ease-out hover:rounded-md hover:btn-primary btn-ghost text-black w-1/2">Continue</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function PassVisibility() {
+        const passwordInputs = document.querySelectorAll('.passIn');
+        const showPasswordCheckbox = document.getElementById('showPassword');
+
+        passwordInputs.forEach(input => {
+            if (showPasswordCheckbox.checked) {
+            input.setAttribute('type', 'text');
+            } else {
+            input.setAttribute('type', 'password');
+            }
+        });
+        }
+
+        </script>
+        
+</body>
+</html>

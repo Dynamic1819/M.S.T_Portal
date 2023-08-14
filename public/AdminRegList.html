@@ -1,0 +1,192 @@
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registeration</title>
+    <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="flex items-center">
+        <div>
+            <div class="fixed w-full z-50">
+                <nav class=""><!-- backdrop-blur-md-->
+                    <div class="grid xl:grid-cols-8 sm:grid-cols-5 xxs:grid-cols-2 bg-gray-300 lg:bg-gray-300/60 backdrop-blur-md ">
+                        <div class="flex xl:col-span-3 sm:col-span-2 xxs:col-span-1 pl-3 bg-primary rounded-r-full xl:rounded-none">
+                            <div class="w-10 xs:w-auto pt-[5px] sm:w-auto xs:pt-0 mdl:pt-1">
+                                <img src="../assets/M.S.T LOGO.jpg" alt="M.S.T Logo" class="w-[55px] md:w-14 py-1 rounded-full">
+                            </div>
+                            <div class="sm:py-5 sm:mx-1 sm:px-3 xs:pt-5 xxs:pt-4 xs:px-0 mdl:mx-8 text-gray-100">
+                                <h1 class="flex ml-3 text-lg md:text-2xl font-bold sm:inline xs-text[2px]">Dashboard</h1>
+                            </div>
+                        </div>
+    
+                        <!-- Space lol-->
+                        <div class="lg:col-span-1 bg-primary rounded-r-full hidden xl:inline"></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="pt-[53px] xs:pt-[63px] md:pt-[72px] bg-gray-200">
+        <div class="h-screen">
+            
+            <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="absolute bottom-5 right-5 inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden bg-primary">
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+                </svg>
+            </button>
+            
+            <aside id="default-sidebar" class="fixed top-[53] md:top-16 left-0 z-40 w-1/2 md:w-2/6 lg:w-1/5 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-900" aria-label="Sidebar">
+                <div class="h-full px-3 py-4 overflow-y-auto bg-white">
+                <ul class="space-y-2 font-medium">
+                    <li>
+                        <a href="AdminDash.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                            </svg>
+                            <span class="ml-3 group-hover:text-white">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminAttend.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <i class="fa fa-calendar-check-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Attendance</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminRegister.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <i class="fa fa-user-plus text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Registeration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminRegList.html" class="flex items-center p-2 rounded-lg hover:bg-primary group activeCorner">
+                            <i class="fa fa-user-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Student Lists</span>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </aside>
+            <div class="md:w-4/6 lg:w-4/5 min-h-screen ml-auto pt-2 bg-gray-300">
+                <div class="mx-4 space-y-4 bg-white">
+                    <section class="bg-gray-50 p-3 sm:p-5">
+                        <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+                            <!-- Start coding here -->
+                            <div class="bg-white relative shadow-md sm:rounded-lg overflow-hidden">
+                                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                                    <div class="w-full md:w-1/2">
+                                        <form class="flex items-center">
+                                            <label for="simple-search" class="sr-only">Search</label>
+                                            <div class="relative w-full">
+                                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </div>
+                                                <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2" placeholder="Search" required="">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                                        <div class="w-full md:w-auto">
+                                            <label for="filter" class="block px-1 text-sm font-medium text-gray-900">Filter by Course</label>
+                                            <select name="filter" id="filter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                                                <option value="" hidden></option>
+                                                <option value="ncc">NCC</option>
+                                                <option value="itpec">ITPEC</option>
+                                                <option value="bsc">B.Sc</option>
+                                                <option value="certificate">Certifications</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-left text-gray-500">
+                                        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                            <tr>
+                                                <th scope="col" class="px-2 py-3">No.</th>
+                                                <th scope="col" class="px-2 py-3">Student ID</th>
+                                                <th scope="col" class="px-2 py-3">Name</th>
+                                                <th scope="col" class="px-2 py-3">Course</th>
+                                                <th scope="col" class="px-2 py-3">Class</th>
+                                                <th scope="col" class="px-2 py-3">Batch</th>
+                                                <th scope="col" class="px-2 py-3">Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b">
+                                                <th scope="row" class="px-2 py-3 font-medium">1</th>
+                                                <th scope="row" class="px-2 py-3 font-medium">MSTY-00000</th>
+                                                <td class="px-2 py-3">IDK</td>
+                                                <td class="px-2 py-3">NCC</td>
+                                                <td class="px-2 py-3">L3DC</td>
+                                                <td class="px-2 py-3">10</td>
+                                                <td class="px-2 py-3">asdfasdf@gmail.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+                                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                                        Showing
+                                        <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                                        of
+                                        <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                                    </span>
+                                    <ul class="inline-flex items-stretch -space-x-px">
+                                        <li>
+                                            <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+                                                <span class="sr-only">Previous</span>
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-current="page" class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700">3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">...</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">100</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+                                                <span class="sr-only">Next</span>
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+</body>
+</html>

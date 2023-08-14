@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Student Corner */
+.sideList{
+    @apply flex items-center py-3 px-6 my-3 rounded-lg transition ease-out duration-200 hover:scale-105 hover:bg-primary hover:text-white;
+}
+.activeCorner{
+    @apply bg-primary text-white;
+}
