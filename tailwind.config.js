@@ -13,12 +13,18 @@ module.exports = {
     extend: {
       colors:{
         primary: '#041562',
-        secondary:'#9a0004',
+        secondary:'#912024',
         color1:'#484b6a',
         color2:'#9394a5',
       },
     },
   },
   plugins: [require("daisyui")],
+
+
+  daisyui: {
+    themes: ['light'],
+    
+  },
 }
 

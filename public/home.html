@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="flex items-center">
+        <div>
+            <div class="fixed w-full z-50">
+                <nav class=""><!-- backdrop-blur-md-->
+                    <div class="grid xl:grid-cols-8 sm:grid-cols-5 xxs:grid-cols-2 bg-gray-300 lg:bg-gray-300/60 backdrop-blur-md">
+                        <div class="flex xl:col-span-3 sm:col-span-2 xxs:col-span-1 pl-3 bg-primary rounded-r-full xl:rounded-none">
+                            <div class="w-10 xs:w-auto pt-[5px] sm:w-auto xs:pt-0 mdl:pt-1">
+                                <img src="../assets/M.S.T LOGO.jpg" alt="M.S.T Logo" class="w-[55px] md:w-14 py-1 rounded-full">
+                            </div>
+                        </div>
+  
+                        <!-- Space lol-->
+                        <div class="lg:col-span-1 bg-primary rounded-r-full hidden xl:inline"></div>
+  
+  
+                          <div class="md:col-span-3 xl:col-span-4 flex items-center justify-end">
+                              <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-12 md:w-[60px] rounded-full cursor-pointer" src="../assets/istockphoto-1316420668-612x612.jpg" alt="User dropdown">
+                          </div>
+  
+                          <!-- Dropdown menu -->
+                          <div id="userDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-56">
+                              <div class="px-4 py-3 text-sm text-gray-900">
+                              <div class="font-medium text-xl">User Name</div>
+                              <div class="font-medium">Student ID</div>
+                              </div>
+                              <ul class="py-2 text-sm text-gray-700" aria-labelledby="avatarButton">
+                              <li>
+                                  <a href="#" class="block px-4 py-2 text-lg hover:bg-gray-100">Profile</a>
+                              </li>
+                              </ul>
+                              <div class="py-1">
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                              </div>
+                          </div>
+  
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-20 bg-white text-black relative">
+
+        <div class="md:px-32">
+            <div class="md:grid md:grid-cols-3 items-center text-center">
+                <div>
+                    <img src="../assets/istockphoto-1316420668-612x612.jpg" class="rounded-md w-20 md:w-32 mx-auto" alt="">
+                </div>
+                <div>
+                    <h1 class="text-lg md:text-2xl font-semibold">Name</h1>
+                    <h2>Class and Batch</h2>
+                </div>
+                <div>
+                    <h1 class="text-lg md:text-2xl font-semibold" id="currentDate"></h1>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 py-5">
+                <div class="flex justify-center text-center text-white bg-primary mx-3 md:py-4 rounded-md" data-aos="fade-right" data-aos-duration="1000">
+                    <div>
+                        <h2>99.9k</h2>
+                        <h3>from student corner</h3>
+                    </div>
+                </div>
+                <div class="flex justify-center text-center text-white bg-primary mx-3 md:py-4 rounded-md" data-aos="fade-up" data-aos-duration="1000">
+                    <div>
+                        <h2>99.9k</h2>
+                        <h3>from student corner</h3>
+                    </div>
+                </div>
+                <div class="flex justify-center text-center text-white bg-primary mx-3 md:py-4 rounded-md" data-aos="fade-left" data-aos-duration="1000">
+                    <div>
+                        <h2>99.9k</h2>
+                        <h3>from student corner</h3>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Slider main container -->
+        <div class="swiper h-48">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../assets/cambridge.JPG" alt="" class="mx-auto"></div>
+            <div class="swiper-slide"><img src="../assets/cambridge.JPG" alt="" class="mx-auto"></div>
+            <div class="swiper-slide"><img src="../assets/cambridge.JPG" alt="" class="mx-auto"></div>
+            ...
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="grid md:grid-cols-4 grid-cols-2 py-10">
+            <a href="#" class="flex flex-col items-center justify-center space-y-3 mx-5 py-4 rounded-md transition-transform duration-300 ease-out cursor-pointer bg-primary text-white hover:scale-110">
+                <i class="fa fa-table md:text-3xl text-lg"></i>
+                <h4 class="font-semibold">Attendance</h4>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center space-y-3 mx-5 py-4 rounded-md transition-transform duration-300 ease-out cursor-pointer bg-primary text-white hover:scale-110">
+                <i class="fa fa-clock-o md:text-3xl text-lg"></i>
+                <h4 class="font-semibold">Time Table</h4>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center space-y-3 mx-5 py-4 rounded-md transition-transform duration-300 ease-out cursor-pointer bg-primary text-white hover:scale-110">
+                <i class="fa fa-credit-card md:text-3xl text-lg"></i>
+                <h4 class="font-semibold">Payment</h4>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center space-y-3 mx-5 py-4 rounded-md transition-transform duration-300 ease-out cursor-pointer bg-primary text-white hover:scale-110">
+                <i class="fas fa-book md:text-3xl text-lg"></i>
+                <h4 class="font-semibold">Library</h4>
+            </a>
+
+        </div>
+
+        <div class="alert shadow-lg md:max-w-6xl absolute bottom-12 md:left-24 z-50" data-aos="fade-up" >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div>
+              <h3 class="font-bold">New message!</h3>
+              <div class="text-xs">You have 1 unread message</div>
+            </div>
+            <button class="btn btn-sm">See</button>
+        </div>
+    </main>
+    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://kit.fontawesome.com/07c72ea183.js" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
+        
+        
+        AOS.init();
+
+
+        // Get the current date
+        var currentDate = new Date();
+
+        // Format the date as desired (e.g., "August 6, 2023")
+        var formattedDate = currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+        // Display the formatted date in the div element with id "currentDate"
+        document.getElementById("currentDate").textContent = formattedDate;
+
+    </script>
+</body>
+</html>

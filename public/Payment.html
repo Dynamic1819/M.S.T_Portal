@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="flex items-center">
+        <div>
+            <div class="fixed w-full z-50">
+                <nav class=""><!-- backdrop-blur-md-->
+                    <div class="grid xl:grid-cols-8 sm:grid-cols-5 xxs:grid-cols-2 bg-gray-300 lg:bg-gray-300/60 backdrop-blur-md ">
+                        <div class="flex xl:col-span-3 sm:col-span-2 xxs:col-span-1 pl-3 bg-primary rounded-r-full xl:rounded-none">
+                            <div class="w-10 xs:w-auto pt-[5px] sm:w-auto xs:pt-0 mdl:pt-1">
+                                <img src="../assets/M.S.T LOGO.jpg" alt="M.S.T Logo" class="w-[55px] md:w-14 py-1 rounded-full">
+                            </div>
+                            <div class="sm:py-5 sm:mx-1 sm:px-3 xs:pt-5 xxs:pt-4 xs:px-0 mdl:mx-8 text-gray-100">
+                                <h1 class="flex ml-3 text-lg md:text-2xl font-bold sm:inline xs-text[2px]">Dashboard</h1>
+                            </div>
+                        </div>
+    
+                        <!-- Space lol-->
+                        <div class="lg:col-span-1 bg-primary rounded-r-full hidden xl:inline"></div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-[53px] xs:pt-[63px] md:pt-[72px] bg-gray-200">
+        <div class="h-screen">
+            
+            <aside id="default-sidebar" class="fixed top-[53] md:top-16 left-0 z-40 w-1/2 md:w-2/6 lg:w-1/5 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-900" aria-label="Sidebar">
+                <div class="h-full px-3 py-4 overflow-y-auto bg-white">
+                <ul class="space-y-2 font-medium">
+                    <li>
+                        <a href="AdminDash.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                            </svg>
+                            <span class="ml-3 group-hover:text-white">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminAttend.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <i class="fa fa-calendar-check-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Attendance</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminRegister.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <i class="fa fa-user-plus text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Registeration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="AdminRegList.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                            <i class="fa fa-user-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Student Lists</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Payment.html" class="flex items-center p-2 rounded-lg hover:bg-primary group activeCorner">
+                            <i class="fa fa-bank text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Payment</span>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </aside>
+            <div class="md:w-4/6 lg:w-4/5 min-h-screen ml-auto py-2 bg-gray-300">
+                <div class="mx-4 space-y-4">
+                    <section class="">
+                        <div class="bg-white my-4 py-3 rounded-md">
+                            <form action="" class="px-8 py-4">
+                                <div class="text-center">
+                                    <h1 class="text-2xl font-semibold">Payment by Student</h1>
+                                </div>
+                                <div class="form-control w-full">
+                                    <label class="label">
+                                        <span class="label-text">Student Name</span>
+                                    </label>
+                                    <label class="input-group input-group-sm">
+                                        <input type="text" placeholder="Type here" class="input input-bordered input-sm">
+                                        <span>
+                                        <button><i class="fa fa-search"></i></button>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-control w-full">
+                                    <label class="label">
+                                      <span class="label-text">Date</span>
+                                    </label>
+                                    <input type="date" placeholder="" id="todayDate" class="input input-bordered w-full max-w-xs input-sm">
+                                </div>
+                                <div class="form-control w-full">
+                                    <label class="label">
+                                      <span class="label-text">Advance</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs input-sm">
+                                </div>
+                                <div class="form-control w-full max-w-sm">
+                                    <label class="label">
+                                        <span class="label-text">Payment Methods</span>
+                                      </label>
+                                    <label class="label cursor-pointer">
+                                      <span class="label-text">Quick Pay</span> 
+                                      <input type="radio" name="payMethod" class="radio radio-sm">
+                                    </label>
+                                    <label class="label cursor-pointer">
+                                        <span class="label-text">Cash</span> 
+                                        <input type="radio" name="payMethod" class="radio radio-sm">
+                                      </label>
+                                </div>
+                                <div>
+                                    <button class="btn btn-wide bg-primary text-white hover:text-black">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Payments -->
+                        <div class="text-center bg-white my-4 py-3 rounded-md">
+                            <h2 class="py-4 font-semibold text-xl">Payments History</h2>
+                            <div class="overflow-x-auto px-4">
+                                <table class="table table-zebra-zebra">
+                                    <thead class="text-base">
+                                        <th>Date</th>
+                                        <th>Total Fees</th>
+                                        <th>Last Balance</th>
+                                        <th>Advance</th>
+                                        <th>Payment Methods</th>
+                                        <th>New Balance</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>February</td>
+                                            <td>90000000</td>
+                                            <td>89990000</td>
+                                            <td>89990000</td>
+                                            <td>Cash</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>January</td>
+                                            <td>90000000</td>
+                                            <td>0</td>
+                                            <td>10000</td>
+                                            <td>Cash</td>
+                                            <td>89990000</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        document.getElementById("todayDate").valueAsDate = new Date();
+    </script>
+</body>
+</html>

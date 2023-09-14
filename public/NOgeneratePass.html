@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex items-center justify-between">
+        <div class="w-full">
+            <label for="gPass" class="block text-sm font-medium text-gray-900">Generate Password</label>
+            <input type="text" name="gPass" placeholder="Create password" id="gPass" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2" readonly>
+        </div>
+        <div class="flex px-10 space-x-7">
+            <button id="button" class="btn1 text-center mt-5 rounded-md font-medium p-2 bg-primary text-white" onclick="genPassword()">Generate</button>
+            <button id="button" class="btn2 text-center mt-5 rounded-md font-medium p-2 bg-emerald-400 text-white" onclick="copyPassword()">Copy</button>
+        </div>
+    </div>
+
+    <script>
+        var password=document.getElementById("gPass");
+
+        function genPassword() {
+        var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var passwordLength = 12;
+        var password = "";
+        for (var i = 0; i <= passwordLength; i++) {
+        var randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber +1);
+        }
+            document.getElementById("gPass").value = password;
+        }
+        
+        function copyPassword() {
+        var copyText = document.getElementById("gPass");
+        copyText.select();
+        document.execCommand("copy");  
+        }
+
+    </script>
+</body>
+</html>

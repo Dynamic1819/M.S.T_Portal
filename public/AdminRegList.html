@@ -3,12 +3,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registeration</title>
+    <title>Student List</title>
     <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet"> -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
 
@@ -75,6 +78,12 @@
                             <span class="ml-3 group-hover:text-white">Student Lists</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="Payment.html" class="flex items-center p-2 rounded-lg hover:bg-primary group ">
+                            <i class="fa fa-bank text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                            <span class="ml-3 group-hover:text-white">Payment</span>
+                        </a>
+                    </li>
                 </ul>
                 </div>
             </aside>
@@ -122,6 +131,7 @@
                                                 <th scope="col" class="px-2 py-3">Class</th>
                                                 <th scope="col" class="px-2 py-3">Batch</th>
                                                 <th scope="col" class="px-2 py-3">Email</th>
+                                                <th scope="col" class="px-2 py-3">Details</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -133,17 +143,14 @@
                                                 <td class="px-2 py-3">L3DC</td>
                                                 <td class="px-2 py-3">10</td>
                                                 <td class="px-2 py-3">asdfasdf@gmail.com</td>
+                                                <td class="px-2 py-3 text-teal-600"><a href="StudentDetail.html">View detail</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                  
                                 <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
-                                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                                        Showing
-                                        <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
-                                        of
-                                        <span class="font-semibold text-gray-900 dark:text-white">1000</span>
-                                    </span>
+                                    
                                     <ul class="inline-flex items-stretch -space-x-px">
                                         <li>
                                             <a href="#" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
@@ -186,7 +193,7 @@
         </div>
         
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script> -->
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 </body>
 </html>
