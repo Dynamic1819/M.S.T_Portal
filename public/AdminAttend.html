@@ -3,14 +3,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendancez</title>
+    <title>Attendance</title>
     <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,7 +14,7 @@
     <header class="flex items-center">
         <div>
             <div class="fixed w-full z-50">
-                <nav class=""><!-- backdrop-blur-md-->
+                <nav class="">
                     <div class="grid xl:grid-cols-8 sm:grid-cols-5 xxs:grid-cols-2 bg-gray-300 lg:bg-gray-300/60 backdrop-blur-md ">
                         <div class="flex xl:col-span-3 sm:col-span-2 xxs:col-span-1 pl-3 bg-primary rounded-r-full xl:rounded-none">
                             <div class="w-10 xs:w-auto pt-[5px] sm:w-auto xs:pt-0 mdl:pt-1">
@@ -29,251 +25,822 @@
                             </div>
                         </div>
     
-                        <!-- Space lol-->
                         <div class="lg:col-span-1 bg-primary rounded-r-full hidden xl:inline"></div>
+    
+                        <label for="my-drawer-2" class="btn drawer-button lg:hidden absolute right-2 xs:top-2 xxs:top-0.5">
+                            <i class="fa fa-bars"></i>
+                        </label>
                     </div>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="pt-[53px] xs:pt-[63px] md:pt-[72px] bg-gray-200">
-        <div class="h-screen">
-            
-            <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="absolute bottom-5 right-5 inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden bg-primary">
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                </svg>
-            </button>
-            
-            <aside id="default-sidebar" class="fixed top-[53] md:top-16 left-0 z-40 w-1/2 md:w-2/6 lg:w-1/5 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-900" aria-label="Sidebar">
-                <div class="h-full px-3 py-4 overflow-y-auto bg-white">
-                <ul class="space-y-2 font-medium">
-                    <li>
-                        <a href="AdminDash.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-                            </svg>
-                            <span class="ml-3 group-hover:text-white">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="AdminAttend.html" class="flex items-center p-2 rounded-lg hover:bg-primary group activeCorner">
-                            <i class="fa fa-calendar-check-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Attendance</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="AdminRegister.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <i class="fa fa-user-plus text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Registeration</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="AdminRegList.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <i class="fa fa-user-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Student Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Payment.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <i class="fa fa-bank text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Payment</span>
-                        </a>
-                    </li>
-                </ul>
-                </div>
-            </aside>
-            <div class="md:w-4/6 lg:w-4/5 min-h-screen ml-auto pt-2 bg-gray-300">
-                <div class="mx-4 space-y-4 text-black">
-                    <div class="flex mx-1 items-center justify-around">
-                        <div>
-                            <label for="">Skills</label>
-                            <select name="" id="skills">
-                                <option value="" hidden></option>
-                                <option value="ncc">NCC</option>
-                                <option value="itpec">ITPEC</option>
-                                <option value="bsc">B.Sc</option>
-                                <option value="certificate">Certifications</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="classes">Classes</label>
-                            <select name="" id="classes">
-                                <option value="" hidden></option>
-                                <option value="l4dc">L4DC</option>
-                                <option value="l5dc">L5DC</option>
-                                <option value="ipClass">IP</option>
-                                <option value="feClass">FE</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="batch">Batch</label>
-                            <input type="text" id="batch" placeholder="Batch">
-                        </div>
+    <main class="bg-gray-200">
+        <div class="drawer lg:drawer-open md:pt-[70px]">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle">
+            <div class="drawer-content overflow-hidden">
+              <!-- Page content here -->
+              <div class="md:mx-4 space-y-4 text-black mt-12 md:mt-0">
+                <div class="flex flex-wrap gap-5 md:gap-0 mx-1 items-center md:justify-around pt-5">
+                    <div>
+                        <select class="select md:select-xs select-sm select-bordered">
+                            <option selected hidden>Course</option>
+                            <option>NCC</option>
+                            <option>ITPEC</option>
+                            <option>C/EH</option>
+                            <option>Web Development</option>
+                            <option>Networking</option>
+                        </select>
                     </div>
-                    <div class="overflow-x-auto bg-white rounded-lg">
-                        <table class="table text-center display" id="myTable">
-                          <!-- head -->
-                          <thead class="text-black">
-                            <tr>
-                              <th>No.</th>
-                              <th class="sticky left-0">Name</th>
-                              <th>Monday</th>
-                              <th>Tuesday</th>
-                              <th>Wednesday</th>
-                              <th>Thursday</th>
-                              <th>Friday</th>
-                            </tr>
-                          </thead>
-                          <tbody class="text-black">
-                            <!-- row 1 -->
-                            <tr>
-                              <th>1</th>
-                              <td class="sticky left-0">Name</td>
-                              <td>
-                                <div class="flex justify-center">
-                                    <div class="px-3">
-                                        <label for="present" class="font-semibold">P</label>
-                                        <input type="checkbox" name="attending"  id="present">
-                                    </div>
-                                    <div class="px-3">
-                                        <label for="leave" class="font-semibold">L</label>
-                                        <input type="checkbox" name="attending"  id="leave">
-                                    </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="flex justify-center">
-                                    <div class="px-3">
-                                        <label for="present" class="font-semibold">P</label>
-                                        <input type="checkbox" name="attending"  id="present">
-                                    </div>
-                                    <div class="px-3">
-                                        <label for="leave" class="font-semibold">L</label>
-                                        <input type="checkbox" name="attending"  id="leave">
-                                    </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="flex justify-center">
-                                    <div class="px-3">
-                                        <label for="present" class="font-semibold">P</label>
-                                        <input type="checkbox" name="attending"  id="present">
-                                    </div>
-                                    <div class="px-3">
-                                        <label for="leave" class="font-semibold">L</label>
-                                        <input type="checkbox" name="attending"  id="leave">
-                                    </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="flex justify-center">
-                                    <div class="px-3">
-                                        <label for="present" class="font-semibold">P</label>
-                                        <input type="checkbox" name="attending"  id="present">
-                                    </div>
-                                    <div class="px-3">
-                                        <label for="leave" class="font-semibold">L</label>
-                                        <input type="checkbox" name="attending"  id="leave">
-                                    </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="flex justify-center">
-                                    <div class="px-3">
-                                        <label for="present" class="font-semibold">P</label>
-                                        <input type="checkbox" name="attending"  id="present">
-                                    </div>
-                                    <div class="px-3">
-                                        <label for="leave" class="font-semibold">L</label>
-                                        <input type="checkbox" name="attending"  id="leave">
-                                    </div>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    <div>
+                        <select class="select md:select-xs select-sm select-bordered">
+                            <option selected hidden>Class</option>
+                            <option>L3DC</option>
+                            <option>L4DC</option>
+                            <option>L5DC</option>
+                            <option>IP</option>
+                            <option>FE</option>
+                        </select>
                     </div>
-                </div>
-                
-                <div class="m-4">
-                    <div class="overflow-x-auto bg-white rounded-lg">
-                        <table class="table text-center display border-collapse" id="myTable">
-                          <!-- head -->
-                          <thead class="text-black">
-                            <tr>
-                              <th></th>
-                              <th></th>
-                              <th colspan="3" class="border-l-2">First Week</th>
-                              <th colspan="3" class="border-l-2">Second Week</th>
-                              <th colspan="3" class="border-l-2">Third Week</th>
-                              <th colspan="3" class="border-l-2">Fourth Week</th>
-                              <th class="border-l-2"></th>
-                            </tr>
-                          </thead>
-                          <tbody class="text-black">
-                            <!-- row 1 -->
-                            <tr>
-                              <th>No.</th>
-                              <td>Name</td>
-                            <!-- first week -->
-                              <td class="border-l-2">P</td>
-                              <td>L</td>
-                              <td>A</td>
-                            <!-- second week -->
-                              <td class="border-l-2">P</td>
-                              <td>L</td>
-                              <td>A</td>
-                            <!-- third week -->
-                              <td class="border-l-2">P</td>
-                              <td>L</td>
-                              <td>A</td>
-                            <!-- fourth week -->
-                              <td class="border-l-2">P</td>
-                              <td>L</td>
-                              <td>A</td>
-
-                              <td class="border-l-2">Total Attendance</td>
-                            </tr>
-
-
-                            <tr>
-                                <th>1</th>
-                                <td>Name</td>
-
-                                <!-- first week -->
-                                <td class="border-l-2">5</td>
-                                <td>5</td>
-                                <td>5</td>
-
-                                <!-- second week -->
-                                <td class="border-l-2">5</td>
-                                <td>5</td>
-                                <td>5</td>
-
-                                <!-- third week -->
-                                <td class="border-l-2">5</td>
-                                <td>5</td>
-                                <td>5</td>
-
-                                <!-- fourth week -->
-                                <td class="border-l-2">5</td>
-                                <td>5</td>
-                                <td>5</td>
-
-                                <!-- Total -->
-                              <td class="border-l-2">20</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    <div>
+                        <input type="text" placeholder="Search Batch" class="input input-bordered md:input-xs input-sm">
+                    </div>
+                    <div>
+                        <a href="AttendHistory.html" class="btn btn-sm bg-primary text-white hover:text-black">History</a>
                     </div>
                 </div>
             </div>
+            
+            <div class="m-4">
+                <h1 class="text-center textxl font-semibold">ITPEC Attendance</h1>
+                <div class="overflow-x-auto bg-white rounded-lg my-4 py-4">
+                    
+                    <table class="table table-zebra-zebra">
+                        <thead class="text-center">
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Feb 1</th>
+                            <th>Feb 2</th>
+                            <th>Feb 3</th>
+                            <th>Feb 4</th>
+                            <th>Feb 5</th>
+                            <th>Feb 6</th>
+                            <th>Feb 7</th>
+                            <th>Feb 8</th>
+                            <th>Feb 9</th>
+                            <th>Feb 10</th>
+                            <th>Feb 11</th>
+                            <th>Feb 12</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">1</td>
+                                <td rowspan="2">IDK</td>
+
+                                <!-- Morning Rows -->
+                                <td>Morning</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Evening Rows -->
+                            <tr>
+                                <td>Evening</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">2</td>
+                                <td rowspan="2">IDK</td>
+
+                                <!-- Morning Rows -->
+                                <td>Morning</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Evening Rows -->
+                            <tr>
+                                <td>Evening</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h1 class="text-center textxl font-semibold">NCC Attendance</h1>
+                <div class="overflow-x-auto bg-white rounded-lg my-4 py-4">
+                    
+                    <table class="table table-zebra-zebra">
+                        <thead>
+                            <thead class="text-center">
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Feb 1</th>
+                                <th>Feb 2</th>
+                                <th>Feb 3</th>
+                                <th>Feb 4</th>
+                                <th>Feb 5</th>
+                                <th>Feb 6</th>
+                                <th>Feb 7</th>
+                                <th>Feb 8</th>
+                                <th>Feb 9</th>
+                                <th>Feb 10</th>
+                                <th>Feb 11</th>
+                                <th>Feb 12</th>
+                            </thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>IDK</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>IDK</td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <label for="Absent">A</label>
+                                        <input type="checkbox" id="Absent" class="checkbox checkbox-xs">
+                                        
+                                        <label for="Leave">L</label>
+                                        <input type="checkbox" id="Leave" class="checkbox checkbox-xs">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div> 
+            <div class="drawer-side fixed overflow-y-hidden">
+              <label for="my-drawer-2" class="drawer-overlay"></label>
+                <div class="min-h-screen px-3 pt-20 lg:pt-3 bg-white">
+                    <ul class="space-y-2 font-medium w-52">
+                        <li>
+                            <a href="AdminDash.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                                <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                                <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                                <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                                </svg>
+                                <span class="ml-3 group-hover:text-white">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminAttend.html" class="flex items-center p-2 rounded-lg hover:bg-primary group activeCorner">
+                                <i class="fa fa-calendar-check-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                                <span class="ml-3 group-hover:text-white">Attendance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminRegister.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                                <i class="fa fa-user-plus text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                                <span class="ml-3 group-hover:text-white">Registeration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminRegList.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                                <i class="fa fa-user-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                                <span class="ml-3 group-hover:text-white">Student Lists</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 </body>
 </html>

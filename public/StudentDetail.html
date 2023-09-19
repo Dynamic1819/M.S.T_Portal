@@ -7,7 +7,6 @@
     <link rel="icon" type="image/x-icon" href="../assets/MST.ico">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,7 +14,7 @@
     <header class="flex items-center">
         <div>
             <div class="fixed w-full z-50">
-                <nav class=""><!-- backdrop-blur-md-->
+                <nav class="">
                     <div class="grid xl:grid-cols-8 sm:grid-cols-5 xxs:grid-cols-2 bg-gray-300 lg:bg-gray-300/60 backdrop-blur-md ">
                         <div class="flex xl:col-span-3 sm:col-span-2 xxs:col-span-1 pl-3 bg-primary rounded-r-full xl:rounded-none">
                             <div class="w-10 xs:w-auto pt-[5px] sm:w-auto xs:pt-0 mdl:pt-1">
@@ -26,175 +25,106 @@
                             </div>
                         </div>
     
-                        <!-- Space lol-->
                         <div class="lg:col-span-1 bg-primary rounded-r-full hidden xl:inline"></div>
+    
+                        <label for="my-drawer-2" class="btn drawer-button lg:hidden absolute right-2 xs:top-2 xxs:top-0.5">
+                            <i class="fa fa-bars"></i>
+                        </label>
                     </div>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="pt-[53px] xs:pt-[63px] md:pt-[72px] bg-gray-200">
-        <div class="h-screen">
-            
-            <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="absolute bottom-5 right-5 inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden bg-primary">
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                </svg>
-            </button>
-            
-            <aside id="default-sidebar" class="fixed top-[53] md:top-16 left-0 z-40 w-1/2 md:w-2/6 lg:w-1/5 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-900" aria-label="Sidebar">
-                <div class="h-full px-3 py-4 overflow-y-auto bg-white">
-                <ul class="space-y-2 font-medium">
-                    <li>
-                        <a href="AdminDash.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-                            </svg>
-                            <span class="ml-3 group-hover:text-white">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="AdminAttend.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <i class="fa fa-calendar-check-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Attendance</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="AdminRegister.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <i class="fa fa-user-plus text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Registeration</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="AdminRegList.html" class="flex items-center p-2 rounded-lg hover:bg-primary group activeCorner">
-                            <i class="fa fa-user-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Student Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Payment.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
-                            <i class="fa fa-bank text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
-                            <span class="ml-3 group-hover:text-white">Payment</span>
-                        </a>
-                    </li>
-                </ul>
-                </div>
-            </aside>
-            <div class="md:w-4/6 lg:w-4/5 min-h-screen ml-auto py-2 bg-gray-300">
-                <div class="mx-4 space-y-4">
-                    <section class="">
-                        <div class="">
-                            <div class="bg-white my-2 rounded-md">
-                                <div class="w-full pt-6">
-                                    <img src="../assets/istockphoto-1316420668-612x612.jpg" alt="" class="w-32 mx-auto">
-                                </div>
-                                <div class="flex flex-col text-center">
-                                    <div class="flex justify-center py-3 mx-auto">
-                                        <table class="table table-zebra">
-                                            <tbody class="text-left">
-                                                <tr>
-                                                    <th class="lg:px-32 py-2">Student Name</th>
-                                                    <td class="lg:px-32 py-2">Name</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="lg:px-32 py-2">Student ID</th>
-                                                    <td class="lg:px-32 py-2">875438753</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="lg:px-32 py-2">Course</th>
-                                                    <td class="lg:px-32 py-2">NCC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="lg:px-32 py-2">Batch</th>
-                                                    <td class="lg:px-32 py-2">1</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="lg:px-32 py-2">Phone</th>
-                                                    <td class="lg:px-32 py-2">095756367</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Payments -->
-                            <div class="text-center bg-white my-4 py-3 rounded-md">
-                                <h2 class="py-4 font-semibold text-xl">Payments by Student</h2>
-                                <div class="overflow-x-auto px-4">
-                                    <table class="table table-zebra-zebra">
-                                        <thead class="text-base">
-                                            <th>Months</th>
-                                            <th>Total Fees</th>
-                                            <th>Last Balance</th>
-                                            <th>Advance</th>
-                                            <th>Payment Methods</th>
-                                            <th>New Balance</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>February</td>
-                                                <td>90000000</td>
-                                                <td>89990000</td>
-                                                <td>89990000</td>
-                                                <td>Cash</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr>
-                                                <td>January</td>
-                                                <td>90000000</td>
-                                                <td>0</td>
-                                                <td>10000</td>
-                                                <td>Cash</td>
-                                                <td>89990000</td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <!-- Addendance -->
-                            <div class="text-center bg-white my-4 py-3 rounded-md">
-                                <h2>Addendance</h2>
-                                <div class="overflow-x-auto px-4">
-                                    <table class="table table-zebra-zebra">
-                                        <thead class="text-base">
-                                            <th>Date</th>
-                                            <th>Total Days</th>
-                                            <th>Present</th>
-                                            <th>Leave</th>
-                                            <th>Absent</th>
-                                            <th>Percentage</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Monday</td>
-                                                <td>100</td>
-                                                <td>10</td>
-                                                <td>0</td>
-                                                <td>90</td>
-                                                <td class="text-red-700 font-semibold">10%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tuesday</td>
-                                                <td>100</td>
-                                                <td>10</td>
-                                                <td>0</td>
-                                                <td>90</td>
-                                                <td class="text-red-700 font-semibold">10%</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+    
+    <main class="bg-gray-200">
+        <div class="drawer lg:drawer-open md:pt-[70px]">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle">
+            <div class="drawer-content">
+              <!-- Page content here -->
+              <div class="md:mx-4 space-y-4">
+                <section class="mt-10 md:mt-0">
+                    <div class="bg-white my-2 rounded-md">
+                        <div class="w-full pt-6">
+                            <img src="../assets/istockphoto-1316420668-612x612.jpg" alt="" class="w-32 mx-auto">
+                        </div>
+                        <div class="flex flex-col text-center">
+                            <div class="flex justify-center py-3 mx-auto">
+                                <table class="table table-zebra">
+                                    <tbody class="text-left">
+                                        <tr>
+                                            <th class="lg:px-32 py-2">Student Name</th>
+                                            <td class="lg:px-32 py-2">Name</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="lg:px-32 py-2">Student ID</th>
+                                            <td class="lg:px-32 py-2">875438753</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="lg:px-32 py-2">Course</th>
+                                            <td class="lg:px-32 py-2">NCC</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="lg:px-32 py-2">Batch</th>
+                                            <td class="lg:px-32 py-2">1</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="lg:px-32 py-2">Phone</th>
+                                            <td class="lg:px-32 py-2">095756367</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </section>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="" class="hidden md:inline"></a>
+                        <a href="Payment.html" class="text-center p-4 bg-primary text-white rounded-md">
+                            <span>Payment</span>
+                        </a>
+                        <a href="StudentAttend.html" class="text-center p-4 bg-primary text-white rounded-md">
+                            <span>Attendance</span>
+                        </a>
+                        <a href="" class="hidden md:inline"></a>
+                    </div>
+                </section>
+            </div>
+            </div> 
+            <div class="drawer-side fixed overflow-y-hidden">
+              <label for="my-drawer-2" class="drawer-overlay"></label>
+                <div class="min-h-screen px-3 pt-20 lg:pt-3 bg-white">
+                    <ul class="space-y-2 font-medium w-56">
+                        <li>
+                            <a href="AdminDash.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                                <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                                <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                                <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                                </svg>
+                                <span class="ml-3 group-hover:text-white">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminAttend.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                                <i class="fa fa-calendar-check-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                                <span class="ml-3 group-hover:text-white">Attendance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminRegister.html" class="flex items-center p-2 rounded-lg hover:bg-primary group activeCorner">
+                                <i class="fa fa-user-plus text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                                <span class="ml-3 group-hover:text-white">Registeration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminRegList.html" class="flex items-center p-2 rounded-lg hover:bg-primary group">
+                                <i class="fa fa-user-o text-lg md:text-xl transition duration-75 group-hover:text-white"></i>
+                                <span class="ml-3 group-hover:text-white">Student Lists</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
     </main>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script> -->
 </body>
 </html>
